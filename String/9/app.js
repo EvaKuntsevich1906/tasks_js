@@ -10,4 +10,5 @@ let strSubstring = str.substring(4,7);
 alert(strSubstring);
 
 let strSlice = str.slice(4,7);
-alert(strSlice)
+alert(strSlice);
+
