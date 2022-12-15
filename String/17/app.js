@@ -1,8 +1,19 @@
-// На вход программе подается переменная date, в которой лежит дата в 
-// формате 'xxxx-xx-xx'. Преобразуйте эту дату в формат 'xx.xx.xxxx'.
+// На вход программе подается строка. Преобразуйте первую букву каждого 
+// слова строки в верхний регистр.
 
 
-let date = '2025-12-31'
+let str = prompt();
+let arr = str.split("");
+let result = [];
 
-alert(date.replaceAll("-", "."));
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i - 1] === " ") {
+        result.push(arr[i].toUpperCase())
+    } else {
+        result.push(arr[i])
+    }
+}
 
+result.join(",").replaceAll(",", "")
+
+alert(result)
