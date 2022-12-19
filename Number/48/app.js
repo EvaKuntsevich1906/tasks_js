@@ -2,3 +2,15 @@
 // цифр положительного трёхзначного числа.
 
 let num = +prompt();
+
+let arr = num.toString().split("");
+
+let a = arr[0];
+let b = arr[1];
+let c = arr[2];
+
+let sum = ((a)+(b)+(c));
+let proizv =(a*b*c);
+
+alert(`Сумма составляющих числа равна ${sum}`);
+alert(`Произведение составляющих числа равно ${proizv}`);
