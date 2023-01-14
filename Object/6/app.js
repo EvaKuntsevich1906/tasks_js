@@ -1,17 +1,17 @@
-//  На входе пустой объект. Выполните задание из каждого пункта:
-// • Добавьте свойство id со значением 1
-// • Добавьте свойство name со значением udemy
-// • Измените значение свойства name на hschool
-// • Удалите свойство name из объекта
+// На входе статичный объект. Необходимо числовые значения удвоить на выходе.
 
-let obj = {}
 
-obj = {
-    id: 1,
-    name: "udemy"
+const obj = {
+    1: "one",
+    2: "two",
+    "three": 3,
+    "four": 4,
+    "five": 5
 }
-delete obj.name
-obj.name = "hschool"
-console.log(obj);
-delete obj.name
-console.log(obj);
+let arr = [];
+for (const key in obj) {
+    if(!isNaN(obj[key])) {
+        arr.push(obj[key]*2)
+    }
+}
+console.log(arr);
