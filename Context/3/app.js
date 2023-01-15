@@ -6,12 +6,20 @@
 // true, если почта содержит @, .com / .ru. False в противном случае
 
 
-const mail = prompt(); 
+const mail = prompt("Введите адрес эл почты");
 
-const obj = {
-    
+const priem_priem = (mail) => {
+    const obj = { }
+    obj.email = mail;
+    if (mail.includes("@") && ((mail.includes("ru")) || (mail.includes("com")))) {
+        obj.active = true
+        return obj
+    } else {
+        obj.email = mail;
+        obj.active = false;
+    }
+    return obj;
 }
 
-obj.email = mail; 
-
-if (mai
+const res = priem_priem(mail);
+console.log(res);
