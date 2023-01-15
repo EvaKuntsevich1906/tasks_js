@@ -11,25 +11,28 @@ let pincode = prompt("А ну давай сюда пароль");
 
 const checkPincode = (pincode) => {
     const pincodeArray = pincode.split("");
+    const symbols = `!"№;%:?*()_+/,#$^&-[]{}":;'.,`
     if (pincodeArray.length > 8) {
         const UpperFiltered = pincodeArray.filter(el => {
-            (el === el.toUpperCase()) ? true: false;
+            return el === el.toUpperCase()
         })
-        if (UpperFiltered) {
-            let arrNumber = []
+        if (UpperFiltered.length > 0) {
             const NumFiltered = pincodeArray.filter(el => {
-                (el == !isNaN(el)) ? arrNumber.push(el) : null;
-                
+                return el == !isNaN(el)
             })
-            if (arrNumber.length > 0) {
-                console.log("Пароль введен успешно");
+            if (NumFiltered.length > 0) {
+                const SymbolFiltred = pincodeArray.filter(el => {
+                   return symbols.split("").includes(el)
+                })
+                if (SymbolFiltred.length > 0) {
+                    return console.log("Пароль введен успешно")
+                } else return console.log("В пароле должен быть спец символ")
             }
+            return console.log("В пароле должна быть хотя бы одна цифра")
         }
-        return true 
+        else console.log("В пароле должна быть хотя бы 1 заглавная буква");
     } else {
-        console.log("Некорректно введены данные")
-        return false
-    }    
+        console.log("Недостаточно символов")
+    }
 }
-
 const result = checkPincode(pincode);

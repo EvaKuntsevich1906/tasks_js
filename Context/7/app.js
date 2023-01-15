@@ -18,7 +18,3 @@ alert (counter())
 alert (counter())
 
 
-const zamfunc = () => {
-    concat = concat+
-    return zamfunc()
-}
