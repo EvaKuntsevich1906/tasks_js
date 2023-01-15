@@ -2,13 +2,12 @@
 // оставить в строке только униакльные символы. IIFE
 // Позволяеткопироватьтекстиз -> позвляеткираьс
 
-let str = "Позволяеткопироватьтекстиз";
-
+const str = "Позволяеткопироватьтекстиз";
 
 (function (str) {
-let uniqueValue = [];
-str.split("").forEach(el => {
-    (!uniqueValue.includes(el)) ? uniqueValue.push(el) : null;
-})
-console.log(uniqueValue.join(""));
+    let uniqueValue = "";
+    str.split("").forEach(el => {
+       if (!uniqueValue.includes(el)) uniqueValue += el;
+    })
+    console.log(uniqueValue);
 }(str))
