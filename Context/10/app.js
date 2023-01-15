@@ -1,20 +1,16 @@
-// Работа с замыканием. Реализуйте функцию, которая будет считать количество
-// своих вызовов
-let concat = "hanna"; 
+// Напишите функцию, которая принимает два параметра: строку и букву. Функция
+// должна подсчитывать количество вхождений указанной буквы в строке. Добавить
+// проверки
 
-function wrapFunction() {
-    return function () {
-       concat = concat+" pleshko"
-        return concat
-    }
+let s = prompt("Введите букву");
+let str = prompt("Введите строку");
+
+const counterChecking = (s, str) => {
+let counter = 0; 
+str.split("").forEach(el => {
+    if (el.includes(s)) counter ++
+})
+return counter 
 }
-let  counter = wrapFunction()
 
-alert (counter())
-alert (counter())
-alert (counter())
-alert (counter())
-alert (counter())
-alert (counter())
-
-
+console.log(counterChecking(s,str));

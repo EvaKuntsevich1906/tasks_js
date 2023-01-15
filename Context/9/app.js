@@ -12,7 +12,7 @@ const checking = (n) => {
         if (el > n) {
             maxValue.push(el)
         }
-    }) 
+    })
     return maxValue
 }
 console.log(checking(n));
