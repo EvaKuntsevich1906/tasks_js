@@ -7,9 +7,10 @@ const pwdGeneration = () => {
     const symbolsArray = symbols.split("");
     let pwd = ""
     let pwdLength = +prompt("Введите количество символов, которое должен содержать будущий пароль");
-    for (let i = 0; i <= pwdLength; i++) {
-        symbolsArray.find(Math.random(1,71))
+    for (let i = 0; i < pwdLength; i++) {
+        pwd  +=  symbolsArray[Math.floor(Math.random() * 70)]
     }
+    return pwd
 }
 console.log(pwdGeneration());
 
