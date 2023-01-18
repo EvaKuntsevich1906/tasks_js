@@ -1,11 +1,17 @@
 // Вычислите сумму массива целых чисел статичного массива используя рекурсию
 
-let arr = [1,2,3,4,5,6,7,8,9,10];
+let arr = [2,1.1, 2.1, 3.1, 4,8];
 
-function recurs (arr) {
-  if (n <= 1) return 1
-  if (arr[i].isInteger())
-  return n * recurs(n-1)
-  recurs()
+function recurs(arr, counter, sum) {
+  if (counter === undefined) {
+    sum = 0
+    counter = arr.length
+  }
+  if (Number.isInteger(arr[counter])) {
+    sum += arr[counter]
+  }
+
+  if (counter === 0) return (sum)
+  return recurs(arr, counter - 1, sum)
 }
-recurs(arr)
+console.log(recurs(arr))
