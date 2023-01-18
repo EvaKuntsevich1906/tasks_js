@@ -2,19 +2,20 @@
 // Функция возвращает новый объект, где значения – исключительно числа
 // первоначального объекта. IIFE
 const obj = {
-    1: 1,
-    2: 2,
-    3: 3,
-    4: 4
+    value_1: 1,
+    value_2: "ghj",
+    value_3: 3,
+    value_4: "cd"
 };
 
-(function (obj) {
-    let newObj = {
-        one: obj[1],
-        two: obj[2],
-        thre: obj[3],
-        four: obj[4]
+ const result = (function createNewObj(obj_) {
+    let newObj = {}
+    for (let key in obj_) {
+        if (typeof obj_[key] === "number") {
+            newObj[key] = obj_[key]
+        }
     }
-    console.log(newObj);
+ return newObj;
 }(obj));
 
+console.log(result);
