@@ -1,7 +1,5 @@
 // Напишите функцию, генерирующую надежный пароль. (Math.random)
 
-
-
 const pwdGeneration = () => {
     const symbols = `1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*`
     const symbolsArray = symbols.split("");
