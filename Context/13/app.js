@@ -16,7 +16,7 @@ function doCounter (obj_) {
         count += 1
     }
     return count;
-}
+};
 
 let res_call = doCounter(obj)
 console.log(res_call);
