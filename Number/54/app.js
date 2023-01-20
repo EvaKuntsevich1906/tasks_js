@@ -4,5 +4,5 @@
 const osnova = +prompt("Введите число, которое необх. возвести в степень");
 const stepen = +prompt("Введите степень, в которою необх. возвести");
 
-const result = (osnova**stepen)
+const result = (osnova ** stepen)
 console.log(`Результат возведения в степень согласно введенным данным - ${result}`);
