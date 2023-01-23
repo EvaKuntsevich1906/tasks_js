@@ -1,24 +1,36 @@
-//  Напишите функцию, которая принимает 2 параметра и возводит первое значение
-// в степень 2 параметра. Добавьте функцию проверки. Написать синтаксис 3
-// функций 
+// Напишите функцию которая принимает массив чисел и возвращает сумму всех
+// элементов массива. Добавьте функцию проверки. Написать синтаксис 3 функц
 
-let num = +prompt("Введите число"); 
-let step = +prompt("Введите степень"); 
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 //declaration
-function vozvedenieDecl (num_, step_) {
-    return num**step
+function toSumDecl(arr_) {
+    let counter = 0
+    for (let i = 0;   i < arr_.length; i++) {
+        counter += arr_[i]
+    }
+    return counter
 }
-console.log(vozvedenieDecl(num,step));
+console.log(toSumDecl(arr));
 
 //eхpression 
- 
-let vozvedenieExpr = function (num_, step_) {
-    return num**step
+
+let toSumExpr = function (arr_) {
+let counter = arr_.reduce(function(sum, elem)  {
+    return sum + elem 
+})
+return counter
 }
-console.log(vozvedenieExpr(num, step));
+console.log(toSumExpr(arr));
 
-//arrow 
+//arrow
 
-let vozvedenieArrow = (num_, step_) => num_**step_ ;
-console.log(vozvedenieArrow(num, step));
+let toSumArrow =  (arr_) =>  {
+    let counter = 0
+    for (let i = 0;   i < arr_.length; i++) {
+        counter += arr_[i]
+    }
+    return counter
+};
+
+console.log(toSumArrow(arr));
