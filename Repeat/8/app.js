@@ -1,20 +1,16 @@
-// Продемонстрируйте пример замены контекста одного объекта на другой
+// Продемонстрируйте пример замыкания
 
-let obj = {
-    id: 19, 
-    name: "Eva", 
-    years: 20
-}
+// Замыкание — это комбинация функции и лексического окружения,
+//  в котором эта функция была определена. Другими словами, замыкание 
+//  даёт вам доступ к Scope  внешней функции из внутренней функции
 
-let newObj = {
-    id: 10, 
-    name: "Hanna",
-    years: function  generationYears() {
-        console.log(this.id);
+
+function wrapper () {
+    let name = "Eva";
+    function findName() {
+        alert(name)
     }
+    findName();
 }
 
-// console.log(newObj.years());
-console.log(newObj.years.call(obj)) // в данном случае id-шник текущего обьекта ЕДИНОРАЗОВО сменятся на указанный
-console.log(newObj.years()) // поскольку предыдущая смена была ЕДИНОРАЗОВОЙ акцией, id вернулось на свое место и равно 10
-console.log(newObj.years.bind(obj)) 
+console.log(wrapper());
