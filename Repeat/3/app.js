@@ -7,9 +7,7 @@ let arr = ["я", 6, "очень", "люблю", "JavaScript", ];
 function toConcatDecl(arr_) {
     let counter = ""
     for (let i = 0; i < arr_.length; i++) {
-        if (isNaN(arr[i])) {
-            counter += arr_[i]
-        }
+         (isNaN(arr[i]))  ?  counter += arr_[i] : null; 
     }
     return counter
 }
