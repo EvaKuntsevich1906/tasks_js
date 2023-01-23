@@ -9,7 +9,7 @@ let obj = {
 let newObj = {
     id: 10, 
     name: "Hanna",
-    years: function (a,b) {
+    years: function  generationYears() {
         console.log(this.id);
     }
 }
@@ -17,8 +17,4 @@ let newObj = {
 // console.log(newObj.years());
 console.log(newObj.years.call(obj)) // в данном случае id-шник текущего обьекта ЕДИНОРАЗОВО сменятся на указанный
 console.log(newObj.years()) // поскольку предыдущая смена была ЕДИНОРАЗОВОЙ акцией, id вернулось на свое место и равно 10
-
-const newContext = newObj.years.bind(obj); 
-console.log(newContext);
-console.log(newContext);
-console.log(newContext);
+console.log(newObj.years.bind(obj)) 
