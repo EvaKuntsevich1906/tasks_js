@@ -1,33 +1,27 @@
-// 1. Реализуйте цикл на проверку массива. Вам необходимо оставить в данном массиве только числа 
+// каррирование
 
-// let arr = ["одло", 2, 4,5,6,"ловп"]; 
-
-// // arr = arr.filter(el => !isNaN(el)) 
-
-// // console.log(arr);
-// let res = []; 
-
-// for(let i = 0; i<arr.length; i++) {
-//     if(!isNaN(arr[i])) {
-//         res.push(arr[i])
+// function primer (c) {
+//     return (v) => {
+//         return (e) => {
+//             return c + v + e 
+//         }
 //     }
 // }
+// console.log(primer(4)(6)(5));
 
-// console.log(res);
+// Необходимо реализовать замыкание, 
+// которое при каждом вызове функции будет
+//  выводить рандомно генерированное значение
+//   от 0 до 100
 
-// Напишите IIFE функцию, которая принимает массив с 
-// дублирующими значениями. Необходимо отфильтровать 
-// массив удалив дубликаты 
-// Пример: 1,1,1,2,2,3,3,4,5,6,6 -> 1,2,3,4,5,6
-
-let arr = [1,1,1,2,2,3,3,4,5,6,6];
-
-(function (arr_) {
-    let rez = []
-    for( let i = 0; i<arr_.length; i++) {
-        if (rez.indexOf(arr_[i]) < 0 ) {
-            rez.push(arr_[i])
-        }
+function primer() {
+    return (a) => {
+        console.log(Math.floor(Math.random() * 100));
     }
-    console.log(rez);
- }(arr))
+}
+
+const finnaly = primer();
+finnaly()
+finnaly()
+finnaly()
+finnaly()
