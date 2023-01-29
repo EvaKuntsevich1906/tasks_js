@@ -1,18 +1,25 @@
-// На входе значение. Необходимо его обработать. Если это число и оно не является
-// четным, бросить исключение
+// Дана строка массива чисел. Необходимо спарсить строку. Если же после того как
+// вы спарсили данные у вас не массив – бросить исключение. Добавить проверку
+// на числа. Далее вывести только те числа, которые кратны 3
 
-let value = prompt(`Введите какое-либо значение`);
+let arr = JSON.parse(`[1,2,3,4,5,6,7,8,9, "прпа"]`);
 
-function сheckValue(value_) {
-    try {
-        if (isNaN(value))   throw new Error("Это не число");
-    
-        if (value % 2 !== 0)  throw new Error(`Это число, но оно не является четным `)
-      
-        return true
-    } catch (err) {
-        return err.message
+function validator(arr_) {
+    if (!Array.isArray(arr_)) throw new Error("Это не массив");
+    for (let i = 0; i < arr_.length; i++) {
+        if (isNaN(arr[i])) throw new Error(" В массиве есть строковое значение")
     }
 }
-let res = сheckValue(value);
-console.log(res);
+
+function checking(arr_) {
+    try {
+     (validator(arr_))
+      return arr_.filter((el) => el % 3 == 0) 
+    } catch (err) {
+        return err.message;
+    }
+}
+
+let result = checking(arr);
+
+console.log(result);
