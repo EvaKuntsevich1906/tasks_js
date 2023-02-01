@@ -1,24 +1,15 @@
-//  Напишите функцию, которая принимает 2 параметра и возводит первое значение
-// в степень 2 параметра. Добавьте функцию проверки. Написать синтаксис 3
-// функций 
+// На вход подается строка в виде числа. Необходимо написать регулярное
+// выражение. Если строка состоит только из чисел, то вывести булевое true, в
+// противном случае бросить исключение и обработать
 
-let num = +prompt("Введите число"); 
-let step = +prompt("Введите степень"); 
+const value = "4"; 
 
-//declaration
-function vozvedenieDecl (num_, step_) {
-    return num**step
+
+function checking (value) {
+    try{
+
+    }
+    catch(err) {
+        return err.message
+    }
 }
-console.log(vozvedenieDecl(num,step));
-
-//eхpression 
- 
-let vozvedenieExpr = function (num_, step_) {
-    return num**step
-}
-console.log(vozvedenieExpr(num, step));
-
-//arrow 
-
-let vozvedenieArrow = (num_, step_) => num_**step_ ;
-console.log(vozvedenieArrow(num, step));
