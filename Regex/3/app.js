@@ -1,20 +1,17 @@
-// На вход подается строка в виде числа. Необходимо написать регулярное
-// выражение. Если строка состоит только из чисел, то вывести булевое true, в
-// противном случае бросить исключение и обработать
+// . На вход подается строка из 2 и более слов. Необходимо все пробелы заменить на
+// “!”. Если же длина исходной строки не изменилась, вывести true, в противном
+// случае бросить исключение и обработать
 
-const value = +prompt("Введите число");
+const str = prompt("Введите несколько слов через пробел");
 
-
-function checking(value) {
+function checking(str) {
     try {
-        if (!/^[0-9]$/gm.test(value)) {
-            throw new Error("Это не цифры")
-        }else {
-           return true
-        }
+        const strreplace = str.replaceAll(/ /gm, "!")
+return strreplace
     } catch (err) {
         return err.message
     }
 }
-const result = checking(value); 
+
+const result = checking(str);
 console.log(result);
