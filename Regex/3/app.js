@@ -7,7 +7,7 @@ const str = prompt("Введите несколько слов через про
 function checking(str) {
     try {
         const strreplace = str.replaceAll(/ /gm, "!")
-return strreplace
+        return strreplace
     } catch (err) {
         return err.message
     }

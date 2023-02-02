@@ -1,20 +1,18 @@
-// На вход подается строка в виде числа. Необходимо написать регулярное
-// выражение. Если строка состоит только из чисел, то вывести булевое true, в
-// противном случае бросить исключение и обработать
+// На вход подается строка в виде электронной почты пользователя. Необходимо
+// написать регулярное выражение для данной строки. Если же строка подходит под
+// регулярное выражение, то вывести булевое true, в противном случае бросить
+// исключение и обработать
+const mail = prompt("Введите эл.почту");
 
-const value = +prompt("Введите число");
 
-
-function checking(value) {
+function checking(mail) {
     try {
-        if (!/^[0-9]$/gm.test(value)) {
-            throw new Error("Это не цифры")
-        }else {
-           return true
-        }
+        if (!/^[a-z]+@[a-z]+\.[a-z]{1,5}$/gm.test(mail)) 
+            throw new Error("Это не почта")
+            return true
     } catch (err) {
         return err.message
     }
 }
-const result = checking(value); 
+const result = checking(mail); 
 console.log(result);
