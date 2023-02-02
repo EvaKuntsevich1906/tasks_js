@@ -1,14 +1,15 @@
-// На вход подается строка в виде числа. Необходимо написать регулярное
-// выражение. Если строка состоит только из чисел, то вывести булевое true, в
-// противном случае бросить исключение и обработать
+// На вход подается строка в виде url. Необходимо написать регулярное выражение
+// для данной строки. Если же строка подходит под регулярное выражение, то
+// вывести булевое true, в противном случае бросить исключение и обработать
 
-const value = +prompt("Введите число");
+const url = prompt("Введите url");
+//https://regex101.com/
 
 
-function checking(value) {
+function checking(url) {
     try {
-        if (!/^[0-9]$/gm.test(value)) {
-            throw new Error("Это не цифры")
+        if (!/^[http | https]+\:\/\/[a-zA-Zа-яА-Я0-9]+\.[а-яА-ЯA-Za-z]+\/$/gm.test(url)) {
+            throw new Error("Это не url")
         }else {
            return true
         }
@@ -16,5 +17,5 @@ function checking(value) {
         return err.message
     }
 }
-const result = checking(value); 
+const result = checking(url); 
 console.log(result);
