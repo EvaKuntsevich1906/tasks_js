@@ -1,5 +1,6 @@
-// Необходимо отобразить кнопку с надписью «Нажми на меня». По клику на нее
-// вывести alert с сообщением
+// Необходимо отобразить кнопку с надписью «Нажми на меня» и инпут со
+// значением по-умолчанию «+375(хх)ххх-хх-хх». По клику на кнопку заменить
+// значение инпута на «+375(29)111-11-11»
 
 
 function messageOutput () {
@@ -7,4 +8,7 @@ function messageOutput () {
 }
 
 const button  = document.querySelector(".btn"); 
-button.addEventListener("click", messageOutput)
+button.addEventListener("click", function valueSubstitution () {
+    const input = document.querySelector(".inp"); 
+    input.value = "+375(29)111-11-11"
+})
