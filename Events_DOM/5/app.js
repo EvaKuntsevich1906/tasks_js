@@ -8,8 +8,8 @@ function messageOutput() {
 
 const button = document.querySelector(".btn");
 button.addEventListener("click", function() {
-    const input = document.querySelector(".inp");
     try {
+        const input = document.querySelector(".inp");
  
     } catch (err) {
         alert(err.message)
