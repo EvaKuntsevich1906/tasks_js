@@ -1,18 +1,16 @@
-// Необходимо отобразить кнопку с надписью «Нажми на меня» и пустой инпут. По
-// клику на кнопку вызвать alert и отобразить сообщение из значения инпута.
-// Проверки на ввод. Обработать ошибки
-
+// Необходимо отобразить числовой инпут и кнопку. После нажатия на кнопку
+// необходимо получить значение из инпута. Проверить, что это число > 0. Если
+// проверка true, то вывести в Результат ряд Фибоначчи. Рекурсия
 
 function messageOutput() {
     alert("Вывод сообщения")
 }
 
 const button = document.querySelector(".btn");
-button.addEventListener("click", function valueSubstitution() {
+button.addEventListener("click", function() {
+    const input = document.querySelector(".inp");
     try {
-        const input = document.querySelector(".inp");
-        if (!input.value) throw new Error("Отсутствует значение")
-        alert(input.value)
+ 
     } catch (err) {
         alert(err.message)
     }
