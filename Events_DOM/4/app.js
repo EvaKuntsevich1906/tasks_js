@@ -9,6 +9,11 @@ function messageOutput() {
 
 const button = document.querySelector(".btn");
 button.addEventListener("click", function valueSubstitution() {
-    const input = document.querySelector(".inp");
-    alert(input.value)
+    try {
+        const input = document.querySelector(".inp");
+        if (!input.value) throw new Error("Отсутствует значение")
+        alert(input.value)
+    } catch (err) {
+        alert(err.message)
+    }
 })
