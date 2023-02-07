@@ -10,6 +10,7 @@ const button = document.querySelector(".btn");
 button.addEventListener("click", function() {
     try {
         const input = document.querySelector(".inp");
+        if (input<0) throw new Error ("Значение не может быть меньше нуля или ровняться нулюю")
  
     } catch (err) {
         alert(err.message)
