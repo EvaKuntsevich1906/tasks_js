@@ -10,5 +10,5 @@ function messageOutput () {
 const button  = document.querySelector(".btn"); 
 button.addEventListener("click", function valueSubstitution () {
     const input = document.querySelector(".inp"); 
-    input.value = "+375(29)111-11-11"
+   input.value = "+375(29)111-11-11"
 })

@@ -1,10 +1,12 @@
-// Необходимо отобразить кнопку с надписью «Нажми на меня». По клику на нее
-// вывести alert с сообщением
+// Необходимо отобразить кнопку с надписью «Нажми на меня» и пустой инпут. По
+// клику на кнопку вызвать alert и отобразить сообщение из значения инпута
 
-
-function messageOutput () {
+function messageOutput() {
     alert("Вывод сообщения")
 }
 
-const button  = document.querySelector(".btn"); 
-button.addEventListener("click", messageOutput)
+const button = document.querySelector(".btn");
+button.addEventListener("click", function valueSubstitution() {
+    const input = document.querySelector(".inp");
+    alert(input.value)
+})
