@@ -1,4 +1,4 @@
-// У вас есть кнопка. После нажатия поменять background.
+// У вас есть кнопка. После нажатия поменять background. ТАКАЯ ЖЕ КАК И 8
 
 const button = document.querySelector(".btn");
 
