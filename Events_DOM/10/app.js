@@ -4,7 +4,14 @@
 
 const button1 = document.querySelector(".btn1");
 const button2 = document.querySelector(".btn2");
+const input = document.querySelector(".inp");
 
-button1.addEventListener("click", function newStyle() {
-    (button.style.backgroundColor == "blue") ? button.style.backgroundColor = "red" : button.style.backgroundColor = "blue"
-})
+function updteValueInInput () {
+    if (button1.addEventListener("click", (input_) =>
+            input_.disabled = true
+        ));
+    else if ((button2.addEventListener("click", (input_) =>
+            input_.disabled = false
+        )));
+}(input)
+
