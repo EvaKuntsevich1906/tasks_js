@@ -7,6 +7,6 @@ const ul = document.querySelector("ul");
 
 ul.addEventListener("click", function (event) {
 let  res = document.querySelector(".res")
-res.innerHTML = event.target.li.textContent; 
+res.innerHTML = `Результат клика  ${ event.target.textContent}`; 
 }); 
 
