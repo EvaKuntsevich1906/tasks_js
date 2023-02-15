@@ -1,10 +1,15 @@
-// Необходимо отобразить кнопку с надписью «Нажми на меня». По клику на нее
-// вывести alert с сообщением
+// По наведению на кнопку вывести сообщение «Hi». Когда мышка выходит за
+// границы кнопки сновка скрывать
 
 
-function messageOutput () {
-    alert("Вывод сообщения")
-}
+const btn = document.querySelector(".btn");
+btn.addEventListener("mouseover", function performance() {
+let p = document.querySelector("p")
+p.innerHTML = "Hi"
+})
 
-const button  = document.querySelector(".btn"); 
-button.addEventListener("click", messageOutput)
+btn.addEventListener("mouseout", function performanceout() {
+    let p = document.querySelector("p")
+    p.innerHTML = ""
+    })
+    
