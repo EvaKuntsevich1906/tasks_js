@@ -5,10 +5,6 @@ let obj = {}
 
 obj = {
     id: 1,
-    name: "udemy"
+    name: "udemy",
+    years: 19
 }
-delete obj.name
-obj.name = "hschool"
-console.log(obj);
-delete obj.name
-console.log(obj);
