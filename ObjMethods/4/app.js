@@ -1,9 +1,7 @@
 // На входе объект. Ключи и значения - автоинкремент (генерируется автоматически
 //     от 1 до n). Написать функцию на поиск в объекте только четных ключей. 
-const n = 10;
-let obj = {
-
-}
+const n = 48;
+let obj = {}
 
 function checkObj(n, obj) {
     try {
@@ -14,8 +12,8 @@ function checkObj(n, obj) {
         for (let key in obj) {
             if (key % 2 === 0) arr.push(key)
         }
-        if (!arr.length) throw new Error("В объекте нет четных ключей")
         const finallyArr = arr.filter(el => el != 0)
+        if (finallyArr.length === 0) throw new Error("В объекте нет четных ключей")
         alert(`Все четные ключи : ${finallyArr}`)
     } catch (err) {
         alert(err.message)
