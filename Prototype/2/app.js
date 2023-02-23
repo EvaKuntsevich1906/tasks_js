@@ -4,20 +4,24 @@
 
 const btn = document.querySelector(".btn");
 const input = document.querySelector("input");
-const array = document.querySelector(".array");
+const arr = document.querySelector(".array");
 const unique = document.querySelector(".unique");
-let arr = [];
+let newarr = [];
+let uniqVal = []
 btn.addEventListener("click", function findUniqueValue() {
     try {
-        if (input.value == "") {
+        if (input.value === "") {
             throw new Error("Вы не ввели значение")
         } else {
-            arr.push(input.value)
-            array.innerHTML = arr;
+            newarr.push(input.value)
+            arr.innerHTML = newarr;
             input.value = "";
 
-            let uniqVal = []
-            uniqVal = arr.filter(el => el != el)
+            for (let i = 0; i < newarr.length; i++) {
+                if (!uniqVal.includes(newarr[i])) {
+                    uniqVal.push(newarr[i])
+                }
+            }
 
             unique.innerHTML = uniqVal;
         }
