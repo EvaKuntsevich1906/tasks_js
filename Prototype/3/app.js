@@ -8,7 +8,7 @@
 // 2: 13
 // }
 
-const inp = document.querySelector(".inp").value;
+const inp = document.querySelector(".inp");
 const btn = document.querySelector(".btn");
 const obj = document.querySelector(".obj");
 const arr = document.querySelector(".arr")
@@ -16,15 +16,17 @@ let array = [];
 let object = {};
 btn.addEventListener("click", function generationArray() {
     try {
-        if (!inp.length)  {
-            throw new Error("Значение отстствует")
-        }else {
-            array.push(inp)
+        if(inp.value) {
+            array.push(inp.value)
             arr.innerHTML = array;
-            inp = "";
+            for (let i = 0; i < array.length; i++) {
+                object[i] = array[i]
+                obj.innerHTML = JSON.stringify(object)
+            }
+            inp.value = "";
+        } else {
+            throw new Error("Значение отстствует")
         }
-
-
     } catch (err) {
         alert(err.message)
     }
