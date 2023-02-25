@@ -6,14 +6,13 @@ const btn = document.querySelector(".btn");
 const result = document.querySelector(".result");
 btn.addEventListener("click", function toCamelCase() {
     try {
-      
-        const splitstr = inp.split(" ")
+        let splitstr = inp.split(" ")
         let camelCaseStr = ""; 
 
         for( let i = 0; i<splitstr.length; i++) {
             camelCaseStr += splitstr[i][0].toUpperCase() + splitstr[i].slice(1); 
             result.innerHTML = camelCaseStr;
-            inp = " "
+            inp = ""
         }
     } catch (err) {
         alert(err.message)
