@@ -7,9 +7,9 @@
 
 
 const btn = document.querySelector(".btn")
-const two = document.querySelector(".two").value;
-const result = document.querySelector(".result")
 btn.addEventListener("click", function transformation() {
-    const teen = parseInt(two, 2)
+    const two = document.querySelector(".two");
+    const result = document.querySelector(".result")
+    const teen = parseInt(+two.value, 2)
     result.innerHTML = teen; 
 })
