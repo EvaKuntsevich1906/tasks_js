@@ -12,14 +12,13 @@ btn.addEventListener("click", function checkValue() {
         if (!inp1 || !inp2) throw new Error("Значения пустые")
         let inp1arr = inp1.split("");
         let inp2arr = inp2.split("");
-        // let result = 0
-        // // inp1arr.forEach(element => {(inp2arr.indexOf(element) >= 0) ? result += 1 : null })
-        // // (result > 2) ? alert("true"): alert(false)
-        (inp1arr.filter(el => (inp2arr.indexOf(el) >= 0)).length> 0) ?  alert(true) : alert(false)
-        console.log((inp1arr.filter(el => (inp2arr.indexOf(el) >= 0))));
-  ;
-
+        (inp1arr.filter(el => (inp2arr.indexOf(el) >= 0)).length> 0) ?  alert(true) : alert(false);
     } catch (err) {
         alert(err.message)
     }
 })
+
+// 2 cпособ
+// let result = 0
+// // inp1arr.forEach(element => {(inp2arr.indexOf(element) >= 0) ? result += 1 : null })
+// // (result > 2) ? alert("true"): alert(false)
