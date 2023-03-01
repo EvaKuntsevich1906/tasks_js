@@ -1,17 +1,24 @@
-// Реализуйте класс Singer, который будет иметь следующие свойства: name,
-// surname. Также класс должен иметь метод getАutograph, который будет выводить
-// “{name} {surname), с наилучшими пожеланиями”. 
+// Реализуйте класс Anagram (Анаграмма это слово или фраза , полученный путем
+//     замены букв исходного слова или фразы). Создать функцию для вывода ряда true,
+//     если слова являются анаграммами. Добавить проверки на ввод.
 
-class Singer {
-    constructor(name, surname) {
-        this.name = name;
-        this.surname = surname;
+class Anagram {
+    
+    constructor(firstword, twoword) {
+        this.firstword = firstword;
+        this.twoword = twoword;
     }
 
-    getAutograph() {
-        return `${this.name} ${this.surname}  с наилучшими пожеланиями`
+    checkAnogram() {
+        try{
+            if (!isNaN(this.firstword) || !isNaN(this.twoword)) throw new Error ("Введены не слова")
+            if (this.firstword.split("").sort().join("") === this.twoword.split("").sort().join(""))
+            return true
+        } catch (err) {
+            alert(err.messange)
+        }
     }
 }
-const singer = new Singer(`John`, `Smith`);
+const anogram = new Anagram(`конус`, `сукно`);
 
-console.log(singer.getAutograph());
+console.log(anogram.checkAnogram());
