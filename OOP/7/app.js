@@ -56,7 +56,7 @@ class ServerById {
                 "priority": 3
             }
         ]
-        const filtredValueInArray = arr.filter((el) => el.id = el.obj)
+        const filtredValueInArray = arr.filter((el) => el.id = obj.id)
         if (!filtredValueInArray.length)  throw new Error("Not Found")
         return filtredValueInArray
     }
