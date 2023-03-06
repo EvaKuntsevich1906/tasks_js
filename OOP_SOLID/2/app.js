@@ -1,17 +1,38 @@
-// Реализуйте класс Singer, который будет иметь следующие свойства: name,
-// surname. Также класс должен иметь метод getАutograph, который будет выводить
-// “{name} {surname), с наилучшими пожеланиями”. 
+// Реализуйте класс DomHtml, который будет взаимодействовать с DOM по клику на
+// кнопку. Класс содержит 4 метода: doPlus, doMinus, doMultiply, doDivide
 
-class Singer {
-    constructor(name, surname) {
-        this.name = name;
-        this.surname = surname;
+class DomHtml {
+    constructor() {
+        this.generateEvent();
     }
 
-    getAutograph() {
-        return `${this.name} ${this.surname}  с наилучшими пожеланиями`
+    generateEvent = () => {
+        const btn = document.querySelector('.btn');
+        btn.addEventListener('click', () => {
+            const firstInp = document.querySelector('.first-inp').value,
+                secondInp = document.querySelector('.second-inp').value;
+            this.doPlus(firstInp, secondInp);
+            this.doMinus(firstInp, secondInp);
+            this.doMultiply(firstInp, secondInp);
+            this.doDivide(firstInp, secondInp);
+        })
+    }
+
+     doPlus = (firstInp, secondInp) => {
+        const plus = document.querySelector('.plus');
+        plus.innerHTML = `Сумма = ${+firstInp + +secondInp}`;
+    }
+    doMinus = (firstInp, secondInp) => {
+        const minus = document.querySelector('.minus');
+        minus.innerHTML = `Разность = ${+firstInp - +secondInp}`;
+    }
+    doMultiply = (firstInp, secondInp) => {
+        const multiply = document.querySelector('.multiply');
+        multiply.innerHTML = `Произведение = ${+firstInp * +secondInp}`;
+    }
+    doDivide = (firstInp, secondInp) => {
+        const devide = document.querySelector('.devide');
+        devide.innerHTML = `Деление = ${+firstInp / +secondInp}`;
     }
 }
-const singer = new Singer(`John`, `Smith`);
-
-console.log(singer.getAutograph());
+const domHtml = new DomHtml();

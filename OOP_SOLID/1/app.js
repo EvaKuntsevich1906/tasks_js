@@ -1,17 +1,42 @@
-// Реализуйте класс Singer, который будет иметь следующие свойства: name,
-// surname. Также класс должен иметь метод getАutograph, который будет выводить
-// “{name} {surname), с наилучшими пожеланиями”. 
+// Реализуйте класс DomHtml, который будет взаимодействовать с DOM по клику на
+// кнопку. Класс содержит 4 метода: doPlus, doMinus, doMultiply, doDivid
 
-class Singer {
-    constructor(name, surname) {
-        this.name = name;
-        this.surname = surname;
+class DomHtml {
+    constructor() {
+        this.focusEvent();
     }
 
-    getAutograph() {
-        return `${this.name} ${this.surname}  с наилучшими пожеланиями`
+    focusEvent() {
+        const btn = document.querySelector(".button");
+        btn.addEventListener("click", function () {
+            const inp1 = document.querySelector(".inp1").value;
+        const  inp2 = document.querySelector(".inp2").value;
+            this.doPlus(inp1, inp2);
+            this.doMinus(inp1, inp2);
+            this.doMyltiply(inp1, inp2);
+            this.doDivid(inp1, inp2);
+        })
+    }
+
+    doPlus (inp1, inp2) {
+        const plus = document.querySelector(".plus");
+        plus.innerHTML = `Сумма значений равна ${+inp1 + +inp2}`
+    }
+
+    doMinus(inp1, inp2) {
+        const minus = document.querySelector(".minus");
+        minus.innerHTML = `Разность значений равна ${+inp1 - +inp2}`
+    }
+
+    doMyltiply(inp1, inp2) {
+        const multiply = document.querySelector(".multiply");
+        multiply.innerHTML = `Произведение  значений равно ${+inp1 * +inp2}`
+    }
+    doDivid(inp1, inp2) {
+        const divid = document.querySelector(".divid");
+        divid.innerHTML = `Частное   значений равно ${+inp1 / +inp2}`
     }
 }
-const singer = new Singer(`John`, `Smith`);
 
-console.log(singer.getAutograph());
+
+const domHtml = new DomHtml();
