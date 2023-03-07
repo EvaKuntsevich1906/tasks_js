@@ -35,4 +35,4 @@ class DomHtml {
         devide.innerHTML = `Деление = ${+firstInp / +secondInp}`;
     }
 }
-const domHtml = new DomHtml();
+const domHtml = new DomHtml(doDivide())

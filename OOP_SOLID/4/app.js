@@ -1,7 +1,7 @@
 // Реализуйте класс DomHtml, который будет взаимодействовать с DOM по клику на
 // кнопку. Класс содержит 4 метода: doPlus, doMinus, doMultiply, doDivid
 
-class NewDom {
+class DomHtml {
     constructor() {
         this.generateEvent();
     }
@@ -37,4 +37,4 @@ class NewDom {
     }
 
 
-const newdom = new NewDom();
+const domHtml = new DomHtml();
