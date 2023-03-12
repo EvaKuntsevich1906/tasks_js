@@ -56,9 +56,7 @@ class ServerGetAll {
         return arr
     }
 
-
 }
-
 
 const serverGetAll = new ServerGetAll();
 console.log(serverGetAll.controller());

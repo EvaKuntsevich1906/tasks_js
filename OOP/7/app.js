@@ -16,53 +16,66 @@
 // Необходимо вывести в консоль найденный элемент массива по id если таковой
 // // имеется. В противном случае бросить исключение. Добавить проверки 
 
+
 class ServerById {
-    controller(obj) {
-       return this.service(obj)
+    middleware() {
+        if (object.length === 0) throw new Error(`Объект пустой`);
+        return this.controller(object);
     }
-    
-    service(obj) {
-        return this.repository(obj)
+    controller() {
+        const data = this.service(object)
+        return data
     }
-    repository(obj) {
-        const arr = [{
-            "id": "javascript",
-            "label": "JavaScript",
-            "category": "programmingLanguages",
-            "priority": 1
-        },
-            {
-                "id": "typescript",
-                "label": "TypeScript",
-                "category": "programmingLanguages",
-                "priority": 1
-            },
-            {
-                "id": "sql",
-                "label": "SQL",
-                "category": "programmingLanguages",
-                "priority": 2
-            },
-            {
-                "id": "java",
-                "label": "Java",
-                "category": "programmingLanguages",
-                "priority": 3
-            },
-            {
-                "id": "go",
-                "label": "GO",
-                "category": "programmingLanguages",
-                "priority": 3
-            }
-        ]
-        const filtredValueInArray = arr.filter((el) => el.id = obj.id)
-        if (!filtredValueInArray.length)  throw new Error("Not Found")
-        return filtredValueInArray
+
+    service() {
+        const data = this.repository(object)
+        return data
+    }
+
+    repository(object) {
+        try {
+            const arr = [{
+                    "id": "javascript",
+                    "label": "JavaScript",
+                    "category": "programmingLanguages",
+                    "priority": 1
+                },
+                {
+                    "id": "typescript",
+                    "label": "TypeScript",
+                    "category": "programmingLanguages",
+                    "priority": 1
+                },
+                {
+                    "id": "sql",
+                    "label": "SQL",
+                    "category": "programmingLanguages",
+                    "priority": 2
+                },
+                {
+                    "id": "java",
+                    "label": "Java",
+                    "category": "programmingLanguages",
+                    "priority": 3
+                },
+                {
+                    "id": "go",
+                    "label": "GO",
+                    "category": "programmingLanguages",
+                    "priority": 3
+                }
+            ]
+            const arrFiltered = arr.filter(el => el.id === object.id);
+            if (arrFiltered.length == 0) throw new Error("Такого id не найдено");
+            return arrFiltered
+        } catch (err) {
+            alert(err.message)
+        }
     }
 }
+const object = {
+    "id": "javascripet"
+}
 
-const obj = { "id": "javascript"}
-
-const serverById =  new ServerById(); 
-console.log(serverById.controller(obj));
+const serverById = new ServerById();
+console.log(serverById.controller(object));

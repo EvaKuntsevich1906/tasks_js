@@ -3,21 +3,20 @@
 // - возвращает true, если не является - то false.
 
 
+
 class Validator {
     constructor(email) {
         this.email = email;
     }
+    i
 
-    isValid(email) {
-        try {
-            if (!/^[a-z]+@[a-z]+\.[a-z]{1,5}$/gm.test(email)) throw new Error("Некоректный ввод, false")
-            return true
-        } catch (err) {
-            alert(err.message)
-        }
+    isEmail() {
+        if (!/^[a-z]+@[a-z]+\.[a-z]{1,5}$/gm.test(this.email)) throw new Error("Некоректный ввод, false")
+        return true
     }
-}
 
-const emailValue = prompt("Введите электронную почту")
-const validator = new Validator();
-console.log(validator.isValid(emailValue));
+    
+}
+const email = prompt("Введите электронную почту")
+const validator = new Validator(email)
+console.log(validator.isEmail());
