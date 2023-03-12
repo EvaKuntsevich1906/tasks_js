@@ -2,23 +2,26 @@
 //     замены букв исходного слова или фразы). Создать функцию для вывода ряда true,
 //     если слова являются анаграммами. Добавить проверки на ввод.
 
+
 class Anagram {
-    
-    constructor(firstword, twoword) {
-        this.firstword = firstword;
-        this.twoword = twoword;
+    constructor(word1, word2) {
+        this.word1 = word1;
+        this.word2 = word2;
     }
 
-    checkAnogram() {
-        try{
-            if (!isNaN(this.firstword) || !isNaN(this.twoword)) throw new Error ("Введены не слова")
-            if (this.firstword.split("").sort().join("") === this.twoword.split("").sort().join(""))
-            return true
+    check() {
+        try {
+            if (!isNaN(this.word1) || (!isNaN(this.word2))) throw new Error("Введены числа, а не слова");
+            if (this.word1.split("").sort().join("") === this.word2.split("").sort().join("")) {
+                alert("Да, эти слова анограмьы")
+            } else {
+                alert("Нет, это не анограммы")
+            }
         } catch (err) {
-            alert(err.messange)
+            alert(err.message)
         }
     }
 }
-const anogram = new Anagram(`конус`, `сукно`);
 
-console.log(anogram.checkAnogram());
+const anogram = new Anagram(prompt("Введите первое слово"), prompt("Введите второе слово"))
+console.log(anogram.check());
