@@ -19,20 +19,24 @@
 // Если совпадение есть – ошибка. Добавить проверки
 
 
+
+
 class ServerPost {
-    controller(obj) {
+    middleware(object) {
+        if (object.length === 0) throw new Error(`Объект пустой`);
+        return this.controller(obj);
+    }
+    controller(object) {
         try {
-            return this.service(obj)
+            return this.service(object)
         } catch (err) {
             alert(err.message)
         }
     }
-
-    service(obj) {
-        return this.repository(obj)
+    service(object) {
+        return this.repository(object)
     }
-
-    repository(obj) {
+    repository(object) {
         const arr = [{
                 "id": "javascript",
                 "label": "JavaScript",
@@ -63,24 +67,21 @@ class ServerPost {
                 "category": "programmingLanguages",
                 "priority": 3
             }
-        ];
-
-
-        const arrfilter = arr.filter((el) => el.label === obj.label);
-        if (arrfilter.length > 0) throw new Error("Значение с таким label уже существует");
-        arr.push({
-            "id": obj.label.toLowerCase(),
-            ...obj
-        });
+        ]
+        let arrFiltered = arr.filter((el) => el.label == object.label);
+        if (arrFiltered.length > 0) throw new Error("Значение с таким label уже существует");
+        arr.push({"id": object.label.toUpperCase(), ...object });
         return arr
     }
 }
 
-const obj = {
-    "label": "testtestik",
+const object = {
+    "label": "python",
     "category": "programmingLanguages",
     "priority": 1
 }
+const serverPost = new ServerPost(object);
+console.log(serverPost.controller(object))
 
-const serverPost = new ServerPost();
-console.log(serverPost.controller(obj))
+
+

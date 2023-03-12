@@ -3,27 +3,27 @@
 // внутри класса. Создать функцию doHashtag, заполняющую новый массив из
 // элементов, каждое значение которого имеет вид #name
 
+
 class Hashtag {
     constructor(n) {
         this.n = n;
     }
-
-    doHashtag(n) {
+    doHashtag() {
         try {
-            const arr = [];
-            for (let i = 0; i < n; i++) {
-                arr.push(prompt("Введите элемент"));
+            if (this.n === 0) throw new Error("Массив не имеет никакого количества элементов") 
+            let arr = [];
+            for (let i = 0; i < this.n; i++) {
+                arr.push(prompt("Введите какую-нибудь строку"));
             }
-            const tag = `#`
-            let tagMapArr = arr.map(el => tag+el)
-            alert(tagMapArr)
+            const tag = "#";
+            let tagMap = arr.map(el => tag + el);
+            alert(tagMap)
         } catch (err) {
-            alrt(err.message)
+            alert(err.message)
         }
     }
 }
+const count = +prompt("Введите количество элементов массива")
+const haschtag = new Hashtag(count);
+console.log(haschtag.doHashtag());
 
-const n = prompt("Введите количество элементов массива");
-
-const hashtag = new Hashtag();
-console.log(hashtag.doHashtag(n));
