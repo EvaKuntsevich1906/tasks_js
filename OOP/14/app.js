@@ -16,26 +16,21 @@
 // обновление значений для соответствующих ключей.
 // Если совпадения по id нет – ошибка. Добавить проверки
 
-
 class ServerPut {
-
-    middleware(obj) {
-        if (obj.length === 0) throw new Error(`Объект пустой`);
-        return this.controller(obj);
-    }
-    controller(obj) {
-        try {
-            return this.service(obj)
-        } catch (err) {
-            alert(err.message)
-        }
+    middleware(object) {
+        if (object.length === 0) throw new Error("Объект пуст")
+        return this.controller(object)
     }
 
-    service(obj) {
-        return this.repository(obj)
+    controller(object) {
+        return this.service(object)
     }
 
-    repository(obj) {
+    service(object) {
+        return this.repository(object)
+    }
+
+    repository(object) {
         const arr = [{
                 "id": "javascript",
                 "label": "JavaScript",
@@ -66,22 +61,21 @@ class ServerPut {
                 "category": "programmingLanguages",
                 "priority": 3
             }
-        ];
-
-        let arrFilter = arr.filter(el => el.id != obj.id);
-        if (arrFilter.length === arr.length) throw new Error('Такого id не найдено');
-        arrFilter.push(obj);
-        return arrFilter;
+        ]
+        const arrFiltered = arr.filter(el => el.id != object.id);
+        if (arrFiltered.length === arr.length) throw new Error('Такого id не найдено');
+        arrFiltered.push(object);
+        return arrFiltered;
     }
 }
 
-const obj = {
+
+const object = {
     "id": "javascript",
     "label": "JavaScript",
     "category": "programmingLanguages",
     "priority": 1
 }
 
-
 const serverPut = new ServerPut();
-console.log(serverPut.controller(obj))
+console.log(serverPut.controller(object))
