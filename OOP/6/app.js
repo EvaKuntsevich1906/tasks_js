@@ -20,6 +20,7 @@ class ServerGetAll {
         const data = this.repository()
         return data
     }
+
     repository() {
         const arr = [{
                 "id": "javascript",
@@ -54,7 +55,10 @@ class ServerGetAll {
         ]
         return arr
     }
+
+
 }
+
 
 const serverGetAll = new ServerGetAll();
 console.log(serverGetAll.controller());
