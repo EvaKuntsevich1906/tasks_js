@@ -1,71 +1,24 @@
-// Реализуйте класс ServerDelete. Обязательными функциями считаются функции
-// middleware, controller, service, repository. Цепочка взаимодействия между методами
-// следующая:
-// middleware -> controller -> service -> repository, где:
-// middleware – функция валидатор
-// controller – функция, принимающая данные. Принимает json
-// service – функция проверки на то что с repository вернулось значение
-// repository – функция, симулирующая БД. Хранит массив данных. Взаимодействие с
-// этим массивом осуществляется только в repository. Массив находится в приложении
-// Задание:
-// на вход подается JSON вида:
-// `{
-// "id": 1
-// }`
-// Необходимо осуществить удаление по id. Если совпадения нет – ошибка. Добавить
-// проверки
+// Реализуйте класс DomHtml, который будет взаимодействовать с DOM по клику на
+// кнопку. Класс содержит 1 метод валидации, называемый middleware, в котором
+// происходит проверка на uuid, введенный в input. Вывести true, если провека
+// успешна. 
 
-class ServerDelete {
-    middleware(object) {
-        try {
-            if (object.length === 0) throw new Error("Объект пустой")
-            return this.controller(object)
-        } catch (err) {
-            alert(err.message)
-        }
-    }
-    controller(object) {
-        return this.service(object)
+class DomHtml {
+    constructor() {
+        this.middleware();
     }
 
-    service(object) {
-        return this.repository(object)
-    }
-
-    repository(object) {
-        let array = [{
-                "id": 1,
-                "name": "Yesenia",
-                "age": 22
-            },
-            {
-                "id": 2,
-                "name": "Hanna",
-                "age": 22
-            },
-            {
-                "id": 3,
-                "name": "Stanislau",
-                "age": 25
-            },
-            {
-                "id": 4,
-                "name": "German",
-                "age": 18
-            },
-            {
-                "id": 5,
-                "name": "Maria",
-                "age": 27
+    middleware = () => {
+        const btn = document.querySelector('.btn');
+        btn.addEventListener('click', () => {
+            try {
+                const inp = document.querySelector('.inp').value;
+                if (!/^[a-z0-9]{8}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{12}$/g.test(inp)) throw new Error(`Некорректный ввод`);
+                alert(true);
+            } catch (error) {
+                alert(error.message);
             }
-        ]
-        const arrFilter = array.filter(el => el.id != object.id)
-        return arrFilter
+        });
     }
 }
-
-const object = JSON.parse(`{ "id": 1}`);
-
-
-const serverDelete = new ServerDelete(object);
-console.log(serverDelete.middleware(object));
+const doHtml = new DomHtml();
