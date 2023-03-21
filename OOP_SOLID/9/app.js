@@ -1,5 +1,5 @@
-// Реализуйте класс Сonversion, сдержащий метод do DecimalNumber, преобразующий
-// все числа 10 системы счисления в 2
+// Реализуйте класс Сonversion, сдержащий метод doBinaryNumber, преобразующий
+// все числа 2 системы счисления в 10
 
 const inp = document.querySelector(".inp").value;
 class Conversion {
@@ -7,10 +7,10 @@ class Conversion {
         this.inp = inp;
     }
 
-    doDecimalNumber () {
+    doBinaryNumber () {
         const btn = document.querySelector(".btn");
         btn.addEventListener("click", function () {
-            alert(this.inp.toString(2))
+            this.inp.toString(2)
         })
     }
 }
