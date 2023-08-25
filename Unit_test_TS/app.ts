@@ -71,7 +71,7 @@ const flattenArray = (arr: any[] | any): any[] => {
     }
 }
 
-// . Напишите функцию chunkArray(array: any[], size: number): any[][], которая
+// 5. Напишите функцию chunkArray(array: any[], size: number): any[][], которая
 // принимает массив и число size, и возвращает новый массив, разделенный на подмассивы указанного размера
 
 const chunkArray = (arr: any[] | any, size: number): any[][] => {
@@ -85,6 +85,19 @@ const chunkArray = (arr: any[] | any, size: number): any[][] => {
     }
     return result;
 };
+
+// .6.  Напишите функцию findMissingNumber(numbers: number[]): number, которая
+// принимает массив чисел, в котором пропущено одно число из
+// последовательности, и возвращает пропущенное число.
+
+
+// const findMissingNumber = (numbers: number[]): number => {
+//     try {
+
+//     } catch(err: any) {
+//         return err.message
+//     }
+// }
 
 //12 Реализуйте функцию, которая принимает в качестве параметра строку и возвращает массив без каких-либо элементов с одинаковым значением рядом друг с другом.
 // Написать тест для функции

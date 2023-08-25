@@ -1,0 +1,22 @@
+{
+  "name": "tasks_js",
+  "version": "1.0.0",
+  "description": "This repository with JS tasks. Task conditions are in the comments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvaKuntsevich1906/tasks_js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EvaKuntsevich1906/tasks_js/issues"
+  },
+  "homepage": "https://github.com/EvaKuntsevich1906/tasks_js#readme",
+  "dependencies": {
+    "react": "^18.2.0"
+  }
+}
