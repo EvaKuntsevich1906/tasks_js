@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/EvaKuntsevich1906/tasks_js#readme",
   "dependencies": {
+
     "react": "^18.2.0"
   }
 }
